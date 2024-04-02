@@ -35,7 +35,7 @@ jobs:
           path: gh-pages
 
       - name: Allure report action from marketplace
-        uses: simple-elf/allure-report-action@v1.0  # Replace v1.0 with the appropriate release version/tag
+        uses: simple-elf/allure-report-action@v1.7 
         if: always()
         id: allure-report
         with: 
