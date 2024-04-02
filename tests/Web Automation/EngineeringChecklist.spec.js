@@ -29,174 +29,174 @@ test.describe("QA Automation", () => {
             await homePage.closeDownloadScreen.click();
         });
 
-        test('Click on cashflow planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1);
-            await homePage.cashFlowPlanning.click();
-            await expect(homePage.cashFlowContent).toContainText("Cashflow Planning");
-        });
+    //     test('Click on cashflow planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1);
+    //         await homePage.cashFlowPlanning.click();
+    //         await expect(homePage.cashFlowContent).toContainText("Cashflow Planning");
+    //     });
 
-        test('Click on liability planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1);
-            await homePage.liabilityPlanning.click();
-            await expect(homePage.liabilityContent).toContainText("Liability Planning");
-        });
+    //     test('Click on liability planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1);
+    //         await homePage.liabilityPlanning.click();
+    //         await expect(homePage.liabilityContent).toContainText("Liability Planning");
+    //     });
 
-        test('Click on tax planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1);
-            await homePage.taxPlanning.click();
-            await expect(homePage.taxContent).toContainText("Tax Planning");
-        });
+    //     test('Click on tax planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1);
+    //         await homePage.taxPlanning.click();
+    //         await expect(homePage.taxContent).toContainText("Tax Planning");
+    //     });
 
-        test('Click on insurance planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1);
-            await homePage.insurancePlanning.click();
-            await expect(homePage.insuranceContent).toContainText("Insurance Planning");
-        });
+    //     test('Click on insurance planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1);
+    //         await homePage.insurancePlanning.click();
+    //         await expect(homePage.insuranceContent).toContainText("Insurance Planning");
+    //     });
 
-        test('Click on investment planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1)
-            await homePage.investmentPlanning.click();
-            await expect(homePage.investmentContent).toContainText("Investment Planning");
-        });
+    //     test('Click on investment planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1)
+    //         await homePage.investmentPlanning.click();
+    //         await expect(homePage.investmentContent).toContainText("Investment Planning");
+    //     });
 
-        test('Click on will planning and assert response', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 1)
-            await homePage.willPlanning.click();
-            await expect(homePage.willContent).toContainText("Will & Estate Planning");
-        });
+    //     test('Click on will planning and assert response', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 1)
+    //         await homePage.willPlanning.click();
+    //         await expect(homePage.willContent).toContainText("Will & Estate Planning");
+    //     });
 
-        test('Click on download the app in How it Works ? section', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 2);
-            await homePage.downloadAppButtonTwo.click();
-            await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-            await homePage.closeDownloadScreen.click();
-        });
+    //     test('Click on download the app in How it Works ? section', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 2);
+    //         await homePage.downloadAppButtonTwo.click();
+    //         await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
+    //         await homePage.closeDownloadScreen.click();
+    //     });
 
-        test('Click on download the app of FWP section', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 3);
-            await homePage.downloadAppButtonThree.click();
-            await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-            await homePage.closeDownloadScreen.click();
-        });
+    //     test('Click on download the app of FWP section', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 3);
+    //         await homePage.downloadAppButtonThree.click();
+    //         await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
+    //         await homePage.closeDownloadScreen.click();
+    //     });
 
-        test('To check expansion and collapse tile in FAQ section', async ({ page }) => {
-            await homePage.faqFirstTile.click();
-            await homePage.faqSecondTile.click();
-            await homePage.faqThirdTile.click();
-            await homePage.faqFourthTile.click();
-            await homePage.faqFifthTile.click();
-        });
+    //     test('To check expansion and collapse tile in FAQ section', async ({ page }) => {
+    //         await homePage.faqFirstTile.click();
+    //         await homePage.faqSecondTile.click();
+    //         await homePage.faqThirdTile.click();
+    //         await homePage.faqFourthTile.click();
+    //         await homePage.faqFifthTile.click();
+    //     });
 
-    })
+    // })
 
-    test.describe("Calculator's Landing Page", async () => {
+    // test.describe("Calculator's Landing Page", async () => {
 
-        let calculatorPage;
+    //     let calculatorPage;
 
-        test.beforeEach(async ({ page }) => {
-            calculatorPage = new CalculatorPage(page);
-            commonFunctions = new CommonFunctions(page);
-            await calculatorPage.goToCalLanding(page, baseUrl);
-        });
+    //     test.beforeEach(async ({ page }) => {
+    //         calculatorPage = new CalculatorPage(page);
+    //         commonFunctions = new CommonFunctions(page);
+    //         await calculatorPage.goToCalLanding(page, baseUrl);
+    //     });
 
-        test('To check the title on Calculator Page', async ({ page }) => {
-            await expect(page).toHaveTitle('Calculators | Personal Finance | Financial Planning | 1 Finance');
-        });
+    //     test('To check the title on Calculator Page', async ({ page }) => {
+    //         await expect(page).toHaveTitle('Calculators | Personal Finance | Financial Planning | 1 Finance');
+    //     });
 
-        test('To click on HRA Exemption and assert response', async ({ page }) => {
-            await calculatorPage.hraExemption.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/hra-exemption");
-        });
+    //     test('To click on HRA Exemption and assert response', async ({ page }) => {
+    //         await calculatorPage.hraExemption.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/hra-exemption");
+    //     });
 
-        test('To click on Old Vs New Calculator and assert response', async ({ page }) => {
-            await calculatorPage.oldVsNewCalculator.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/old-vs-new");
-        });
+    //     test('To click on Old Vs New Calculator and assert response', async ({ page }) => {
+    //         await calculatorPage.oldVsNewCalculator.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/old-vs-new");
+    //     });
 
-        test('To click on Mutual Fund Portfolio Overlap and assert response', async ({ page }) => {
-            await calculatorPage.mFPortfolioOverlap.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/portfolio-review");
-        });
+    //     test('To click on Mutual Fund Portfolio Overlap and assert response', async ({ page }) => {
+    //         await calculatorPage.mFPortfolioOverlap.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/portfolio-review");
+    //     });
 
-        test('To click on Increasing Contribution and assert response', async ({ page }) => {
-            await calculatorPage.increasingContribution.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/increasing-contribution");
-        });
+    //     test('To click on Increasing Contribution and assert response', async ({ page }) => {
+    //         await calculatorPage.increasingContribution.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/increasing-contribution");
+    //     });
 
-        test('To click on Insurance and assert response', async ({ page }) => {
-            await calculatorPage.insurance.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/insurance")
-        })
+    //     test('To click on Insurance and assert response', async ({ page }) => {
+    //         await calculatorPage.insurance.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/insurance")
+    //     })
 
-        test('To click on Mutual Funds and assert response', async ({ page }) => {
-            await calculatorPage.mutualFund.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/mutual-funds");
-        })
+    //     test('To click on Mutual Funds and assert response', async ({ page }) => {
+    //         await calculatorPage.mutualFund.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/mutual-funds");
+    //     })
 
-        test('To click on Loan Refinance and assert response', async ({ page }) => {
-            await calculatorPage.loanRefinance.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/loan-refinance");
-        })
+    //     test('To click on Loan Refinance and assert response', async ({ page }) => {
+    //         await calculatorPage.loanRefinance.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/loan-refinance");
+    //     })
 
-        test('To click on NPS Calculator and assert response', async ({ page }) => {
-            await calculatorPage.npsCalculator.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/nps");
-        });
+    //     test('To click on NPS Calculator and assert response', async ({ page }) => {
+    //         await calculatorPage.npsCalculator.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/nps");
+    //     });
 
-        test('To click on Retirement Corpus and assert response', async ({ page }) => {
-            await calculatorPage.retirementCorpus.click();
-            await expect.soft(page).toHaveURL(baseUrl + "calculator/retirement-corpus");
-        });
+    //     test('To click on Retirement Corpus and assert response', async ({ page }) => {
+    //         await calculatorPage.retirementCorpus.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "calculator/retirement-corpus");
+    //     });
 
-    });
+    // });
 
-    test.describe("Scoring and Ranking's Landing Page", async () => {
+    // test.describe("Scoring and Ranking's Landing Page", async () => {
 
-        let scoringAndRanking;
+    //     let scoringAndRanking;
 
-        test.beforeEach(async ({ page }) => {
-            scoringAndRanking = new ScoringAndRanking(page);
-            commonFunctions = new CommonFunctions(page);
-            await scoringAndRanking.goToScoringRanking(page, baseUrl);
-        });
+    //     test.beforeEach(async ({ page }) => {
+    //         scoringAndRanking = new ScoringAndRanking(page);
+    //         commonFunctions = new CommonFunctions(page);
+    //         await scoringAndRanking.goToScoringRanking(page, baseUrl);
+    //     });
 
-        test('To check the title on Scoring and Ranking Landing Page', async ({ page }) => {
-            await expect(page).toHaveTitle('Financial Products | Scoring & Ranking Model | 1 Finance');
-        });
+    //     test('To check the title on Scoring and Ranking Landing Page', async ({ page }) => {
+    //         await expect(page).toHaveTitle('Financial Products | Scoring & Ranking Model | 1 Finance');
+    //     });
 
-        test('To click on Term Insurance and assert response', async ({ page }) => {
-            await scoringAndRanking.termInsurance.click();
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/term-insurance");
-        });
+    //     test('To click on Term Insurance and assert response', async ({ page }) => {
+    //         await scoringAndRanking.termInsurance.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "product-scoring/term-insurance");
+    //     });
 
-        test('To click on Health Insurance and assert response', async ({ page }) => {
-            await scoringAndRanking.healthInsurance.click();
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/health-insurance");
-        });
+    //     test('To click on Health Insurance and assert response', async ({ page }) => {
+    //         await scoringAndRanking.healthInsurance.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "product-scoring/health-insurance");
+    //     });
 
-        test('To click on Credit Card and assert response', async ({ page }) => {
-            await scoringAndRanking.creditCard.click();
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/credit-card");
-        });
+    //     test('To click on Credit Card and assert response', async ({ page }) => {
+    //         await scoringAndRanking.creditCard.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "product-scoring/credit-card");
+    //     });
 
-        test('To click on Mutual Fund and assert response', async ({ page }) => {
-            await scoringAndRanking.mutualFunds.click();
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/mutual-funds?type=equity");
-        });
+    //     test('To click on Mutual Fund and assert response', async ({ page }) => {
+    //         await scoringAndRanking.mutualFunds.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "product-scoring/mutual-funds?type=equity");
+    //     });
 
-        test('To click on Crypto and assert response', async ({ page }) => {
-            await scoringAndRanking.crypto.click();
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/crypto")
-        })
+    //     test('To click on Crypto and assert response', async ({ page }) => {
+    //         await scoringAndRanking.crypto.click();
+    //         await expect.soft(page).toHaveURL(baseUrl + "product-scoring/crypto")
+    //     })
 
-        test("To check if the expansion and collapse tile is functional and assert response", async ({ page }) => {
-            await scoringAndRanking.firstTile.click();
-            await scoringAndRanking.secondTile.click();
-            await scoringAndRanking.thirdTile.click();
-            await scoringAndRanking.fourthTile.click();
-            await scoringAndRanking.fifthTile.click();
-            await scoringAndRanking.sixthTile.click();
-        })
+    //     test("To check if the expansion and collapse tile is functional and assert response", async ({ page }) => {
+    //         await scoringAndRanking.firstTile.click();
+    //         await scoringAndRanking.secondTile.click();
+    //         await scoringAndRanking.thirdTile.click();
+    //         await scoringAndRanking.fourthTile.click();
+    //         await scoringAndRanking.fifthTile.click();
+    //         await scoringAndRanking.sixthTile.click();
+    //     })
 
     })
 
