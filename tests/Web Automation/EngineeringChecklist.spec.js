@@ -29,63 +29,63 @@ test.describe("QA Automation", () => {
             await homePage.closeDownloadScreen.click();
         });
 
-    //     test('Click on cashflow planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1);
-    //         await homePage.cashFlowPlanning.click();
-    //         await expect(homePage.cashFlowContent).toContainText("Cashflow Planning");
-    //     });
+        test('Click on cashflow planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1);
+            await homePage.cashFlowPlanning.click();
+            await expect(homePage.cashFlowContent).toContainText("Cashflow Planning");
+        });
 
-    //     test('Click on liability planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1);
-    //         await homePage.liabilityPlanning.click();
-    //         await expect(homePage.liabilityContent).toContainText("Liability Planning");
-    //     });
+        test('Click on liability planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1);
+            await homePage.liabilityPlanning.click();
+            await expect(homePage.liabilityContent).toContainText("Liability Planning");
+        });
 
-    //     test('Click on tax planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1);
-    //         await homePage.taxPlanning.click();
-    //         await expect(homePage.taxContent).toContainText("Tax Planning");
-    //     });
+        test('Click on tax planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1);
+            await homePage.taxPlanning.click();
+            await expect(homePage.taxContent).toContainText("Tax Planning");
+        });
 
-    //     test('Click on insurance planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1);
-    //         await homePage.insurancePlanning.click();
-    //         await expect(homePage.insuranceContent).toContainText("Insurance Planning");
-    //     });
+        test('Click on insurance planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1);
+            await homePage.insurancePlanning.click();
+            await expect(homePage.insuranceContent).toContainText("Insurance Planning");
+        });
 
-    //     test('Click on investment planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1)
-    //         await homePage.investmentPlanning.click();
-    //         await expect(homePage.investmentContent).toContainText("Investment Planning");
-    //     });
+        test('Click on investment planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1)
+            await homePage.investmentPlanning.click();
+            await expect(homePage.investmentContent).toContainText("Investment Planning");
+        });
 
-    //     test('Click on will planning and assert response', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 1)
-    //         await homePage.willPlanning.click();
-    //         await expect(homePage.willContent).toContainText("Will & Estate Planning");
-    //     });
+        test('Click on will planning and assert response', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 1)
+            await homePage.willPlanning.click();
+            await expect(homePage.willContent).toContainText("Will & Estate Planning");
+        });
 
-    //     test('Click on download the app in How it Works ? section', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 2);
-    //         await homePage.downloadAppButtonTwo.click();
-    //         await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-    //         await homePage.closeDownloadScreen.click();
-    //     });
+        test('Click on download the app in How it Works ? section', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 2);
+            await homePage.downloadAppButtonTwo.click();
+            await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
+            await homePage.closeDownloadScreen.click();
+        });
 
-    //     test('Click on download the app of FWP section', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 3);
-    //         await homePage.downloadAppButtonThree.click();
-    //         await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-    //         await homePage.closeDownloadScreen.click();
-    //     });
+        test('Click on download the app of FWP section', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 3);
+            await homePage.downloadAppButtonThree.click();
+            await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
+            await homePage.closeDownloadScreen.click();
+        });
 
-    //     test('To check expansion and collapse tile in FAQ section', async ({ page }) => {
-    //         await homePage.faqFirstTile.click();
-    //         await homePage.faqSecondTile.click();
-    //         await homePage.faqThirdTile.click();
-    //         await homePage.faqFourthTile.click();
-    //         await homePage.faqFifthTile.click();
-    //     });
+        test('To check expansion and collapse tile in FAQ section', async ({ page }) => {
+            await homePage.faqFirstTile.click();
+            await homePage.faqSecondTile.click();
+            await homePage.faqThirdTile.click();
+            await homePage.faqFourthTile.click();
+            await homePage.faqFifthTile.click();
+        });
 
     // })
 
@@ -200,165 +200,165 @@ test.describe("QA Automation", () => {
 
     })
 
-    // test.describe("MoneySign Guide Page", async () => {
+    test.describe("MoneySign Guide Page", async () => {
 
-    //     let moneysignPage;
+        let moneysignPage;
 
-    //     test.beforeEach(async ({ page }) => {
-    //         moneysignPage = new MoneysignPage(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl + "moneysign-guide");
-    //     });
+        test.beforeEach(async ({ page }) => {
+            moneysignPage = new MoneysignPage(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl + "moneysign-guide");
+        });
 
-    //     test('To check the title of Moneysign page', async ({ page }) => {
-    //         await expect(page).toHaveTitle('MoneySign® - Smart & Accurate Personal Financial Solutions App| 1Finance');
-    //     });
+        test('To check the title of Moneysign page', async ({ page }) => {
+            await expect(page).toHaveTitle('MoneySign® - Smart & Accurate Personal Financial Solutions App| 1Finance');
+        });
 
-    //     test('Click on vigilant turtle, assert response, and then close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.vigilantTurtle.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Vigilant Turtle");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on vigilant turtle, assert response, and then close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.vigilantTurtle.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Vigilant Turtle");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Persistant Horse, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.persistantHorse.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Persistent Horse");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Persistant Horse, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.persistantHorse.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Persistent Horse");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Far-Sighted Eagle, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.farsightedEagle.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Far-Sighted Eagle");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Far-Sighted Eagle, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.farsightedEagle.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Far-Sighted Eagle");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Opportunistic Lion, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.opportunisticLion.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Opportunistic Lion");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Opportunistic Lion, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.opportunisticLion.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Opportunistic Lion");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Virtuous Elephant, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.virtuousElephant.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Virtuous Elephant");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Virtuous Elephant, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.virtuousElephant.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Virtuous Elephant");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Enlightened Whale, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.enlightenedWhale.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Enlightened Whale");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Enlightened Whale, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.enlightenedWhale.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Enlightened Whale");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Tactical Tiger, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.tacticalTiger.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Tactical Tiger");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Tactical Tiger, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.tacticalTiger.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Tactical Tiger");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Click on Stealthy Shark, assert response and close the card', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.stealthyShark.click();
-    //         const title = await moneysignPage.cardTitle.innerText();
-    //         expect(title).toContain("Stealthy Shark");
-    //         await moneysignPage.closeCard.click();
-    //     });
+        test('Click on Stealthy Shark, assert response and close the card', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.stealthyShark.click();
+            const title = await moneysignPage.cardTitle.innerText();
+            expect(title).toContain("Stealthy Shark");
+            await moneysignPage.closeCard.click();
+        });
 
-    //     test('Check the functionality for next button in 8 MS profile section', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.vigilantTurtle.click();
-    //         await moneysignPage.nextPage();
-    //     });
+        test('Check the functionality for next button in 8 MS profile section', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.vigilantTurtle.click();
+            await moneysignPage.nextPage();
+        });
 
-    //     test('Check the functionality for previous button in 8 MS profile section', async ({ page }) => {
-    //         await moneysignPage.commonStepsToScroll();
-    //         await moneysignPage.stealthyShark.click();
-    //         await moneysignPage.previousPage();
-    //     });
+        test('Check the functionality for previous button in 8 MS profile section', async ({ page }) => {
+            await moneysignPage.commonStepsToScroll();
+            await moneysignPage.stealthyShark.click();
+            await moneysignPage.previousPage();
+        });
 
-    //     test('Scroll down and click on download the app section', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 3);
-    //         await moneysignPage.downloadTheApp.click();
-    //         await moneysignPage.closeButton.click();
-    //     })
+        test('Scroll down and click on download the app section', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 3);
+            await moneysignPage.downloadTheApp.click();
+            await moneysignPage.closeButton.click();
+        })
 
-    //     test('Click on read more link', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 4);
-    //         await moneysignPage.readMore.click();
-    //     })
+        test('Click on read more link', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 4);
+            await moneysignPage.readMore.click();
+        })
 
-    // })
+    })
 
-    // test.describe("Magazine Page", async () => {
+    test.describe("Magazine Page", async () => {
 
-    //     let magazinePage;
+        let magazinePage;
 
-    //     test.beforeEach(async ({ page }) => {
-    //         magazinePage = new MagazinePage(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl + "magazine/");
-    //     })
+        test.beforeEach(async ({ page }) => {
+            magazinePage = new MagazinePage(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl + "magazine/");
+        })
 
-    //     test('Go to magazine Landing page and assert response', async ({ page }) => {
-    //         await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
-    //     });
+        test('Go to magazine Landing page and assert response', async ({ page }) => {
+            await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
+        });
 
-    //     test('Go to Ask a QFA section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.askAQFA.click();
-    //         await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await magazinePage.dispatchOneFinance.click();
-    //         await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await magazinePage.longStoryShort.click();
-    //         await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await magazinePage.personalEssay.click();
-    //         await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await magazinePage.thingAboutMoney.click();
-    //         await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Ask a QFA section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.askAQFA.click();
+            await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
+            await page.goBack();
+            await magazinePage.dispatchOneFinance.click();
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+            await magazinePage.longStoryShort.click();
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+            await magazinePage.personalEssay.click();
+            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+            await page.goBack();
+            await magazinePage.thingAboutMoney.click();
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.dispatchOneFinance.click();
-    //         await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.dispatchOneFinance.click();
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.longStoryShort.click();
-    //         await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.longStoryShort.click();
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to Personal Essay, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.personalEssay.click();
-    //         await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Personal Essay, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.personalEssay.click();
+            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.thingAboutMoney.click();
-    //         await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
-    // })
+        test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.thingAboutMoney.click();
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
+    })
 
     // test.describe('Our Story', () => {
 
