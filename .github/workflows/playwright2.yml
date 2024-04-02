@@ -22,9 +22,6 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test engineeringChecklist.spec.js
 
-      - name: Run allure report
-        run: npm run report
-
       - name: Get Allure History
         uses: actions/checkout@v4
         if: always()
@@ -42,7 +39,7 @@ jobs:
           allure_history: allure-history
 
       - name: Deploy report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # Update to use Node.js 20
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
