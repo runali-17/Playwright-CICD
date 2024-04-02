@@ -1,0 +1,128 @@
+# name: Playwright Tests and Allure Report
+
+# on:
+#   schedule:
+#     - cron: '0 */2 * * *'  # Schedule to run every 2 hours
+#   push:
+#     branches: [ QaAutomationRunali-1 ]
+#   pull_request:
+#     branches: [ QaAutomationRunali-1 ]
+
+# # jobs:
+#   test-and-report:
+#     runs-on: windows-latest
+#     steps:
+#     - uses: actions/checkout@v3
+
+#     - uses: actions/setup-node@v3
+#       with:
+#         node-version: 18
+
+#     - name: Install dependencies
+#       run: npm ci
+
+#     - name: Install Playwright Browsers
+#       run: npx playwright install --with-deps
+
+#     # - name: Install dotenv
+#     #   run: npm install dotenv
+
+#     # - name: Copy .env file
+#     #   run: cp .env.example .env
+
+#     - name: Run Playwright tests
+#       run: npx playwright test engineeringChecklist.spec.js
+
+#     - name: Install Allure
+#       run: npm install --save-dev allure-commandline
+
+#     - name: Install both the Playwright test framework and the Allure Playwright adapter.
+#       run: npm install --save-dev @playwright/test allure-playwright
+
+#     - name: Generate allure report
+#       run: npx allure serve allure-results
+
+#     - uses: microsoft/playwright-github-action@v1
+#       if: always()
+#       with:
+#         name: allure-report
+#         path: allure-report/
+#         retention-days: 30
+
+#     - name: Send Allure report via email
+#       uses: ruunalipainaik/Playwright/action-send-mail@v2
+
+#       with:
+#         server_address: smtp.example.com
+#         server_port: 587
+#         username: ${{ secrets.EMAIL_USERNAME }}
+#         password: ${{ secrets.EMAIL_PASSWORD }}
+#         subject: "Daily Allure Report"
+#         body: "Please find attached the daily Allure report."
+#         to: ashish.raykar@1finance.co.in
+#         from: runali.painaik@1finance.co.in
+#         attachments: allure-report/
+
+
+# #Jenkins 
+
+# name: 1 Finance Engineeering Checklist
+
+# on:
+#   schedule:
+#     - cron: '0 */2 * * *' 
+#   push:
+#     branches: [ QaAutomationRunali-1 ]
+
+# jobs:
+#   test-and-report:
+#     runs-on: windows-latest
+#     steps:
+#       - uses: actions/checkout@v4 
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+
+      # - name: Install dependencies
+      #   run: npm ci
+
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
+
+      # - name: Run Playwright tests
+      #   run: npx playwright test engineeringChecklist.spec.js
+
+      # - name: Install Allure
+      #   run: npm i -D @playwright/test allure-playwright
+
+      # - name: Install the Allure Report command-line tool
+      #   run: npm install --save-dev allure-commandline
+
+      # - name: Install the Allure Playwright adapter
+      #   run: npm install --save-dev allure-playwright
+
+      # - name: Install Allure Playwright adapter
+      #   run: npm install --save-dev allure-playwright
+
+      # - name: Generate Allure report
+      #   run: npx allure generate allure-results --clean
+      #   run: npx allure serve allure-results
+
+      # - name: Open Allure report
+      #   run: npx allure open
+
+      # - name: Send Allure report via email
+      #   uses: dawidd6/action-send-mail@v2
+      #   with:
+      #     server_address: smtp.example.com
+      #     server_port: 587
+      #     username: ${{ secrets.EMAIL_USERNAME }}
+      #     password: ${{ secrets.EMAIL_PASSWORD }}
+      #     subject: "Daily Allure Report"
+      #     body: "Please find attached the daily Allure report."
+      #     to: ashish.raykar@1finance.co.in
+      #     from: runali.painaik@1finance.co.in
+      #     attachments: allure-report/
+
+
+      

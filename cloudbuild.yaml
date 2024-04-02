@@ -1,0 +1,22 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/myproject/myimage', '.' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'install', 'allure-commandline' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'install', 'playwright' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'test', 'engineeringChecklist.spec.js' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'allure', 'generate', './allure-results', '--clean' ]
+
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'allure', 'open', './allure-report' ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
