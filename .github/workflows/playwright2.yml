@@ -6,10 +6,9 @@ on:
 
 jobs:
   test-and-report:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  # Specify Linux environment
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -23,7 +22,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test engineeringChecklist.spec.js
 
-      - name: Generate Allure report
+      - name: Run allure report
         run: npm run report
 
       - name: Get Allure History
@@ -35,12 +34,10 @@ jobs:
           path: gh-pages
 
       - name: Allure report action from marketplace
-        uses: simple-elf/allure-report-action@v1.7 
+        uses: simple-elf/allure-report-action@v1.7
         if: always()
-        id: allure-report
         with: 
-          allure-results: allure-results
-          gh-pages: gh-pages
+          allure_results: allure-results
           allure_report: allure-report
           allure_history: allure-history
 
