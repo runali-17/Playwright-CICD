@@ -47,6 +47,7 @@ jobs:
           publish_dir: allure-history
           
   send-mail:
+        needs: test-and-report
         name: Send mail
         runs-on: ubuntu-latest
         steps:
