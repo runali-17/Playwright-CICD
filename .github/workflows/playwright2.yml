@@ -72,5 +72,5 @@ jobs:
             # Optional plain body:
             body: Build job of ${{github.repository}} completed successfully!
             # Optional HTML body read from file:
-            html_body: file://email.html
+            html_body: https://raw.githubusercontent.com/runali1fin/Playwright-CICD/main/email.html
               
