@@ -69,7 +69,7 @@ jobs:
             # Required mail subject:
             subject: Allure report
             # Required recipients' addresses:
-            to: runali.painaik@1finance.co.in
+            to: runali.painaik@1finance.co.in,vinamra.mittal@1finance.co.in,harshit.maheshwari@1finance.co.in,nikhil.bhosle@1finance.co.in
             # Required sender full name (address can be skipped):
             from: Runali Painaik # <runali.painaik@1finance.co.in>
             # Optional plain body:
