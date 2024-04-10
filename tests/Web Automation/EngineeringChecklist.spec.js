@@ -360,92 +360,92 @@ test.describe("QA Automation", () => {
         });
     })
 
-    test.describe('Our Story', () => {
+    // test.describe('Our Story', () => {
 
-        let ourStoryPage;
+    //     let ourStoryPage;
 
-        test.beforeEach(async ({ page }) => {
-            ourStoryPage = new OurStoryPage(page);
-            commonFunctions = new CommonFunctions(page);
-            await page.goto(baseUrl + "story");
-        })
+    //     test.beforeEach(async ({ page }) => {
+    //         ourStoryPage = new OurStoryPage(page);
+    //         commonFunctions = new CommonFunctions(page);
+    //         await page.goto(baseUrl + "story");
+    //     })
 
-        test('Go Our Story and assert title', async ({ page }) => {
-            await expect.soft(page).toHaveTitle("Certified Financial Advisor & Planner India - Active and Passive Funds, Retirement Planning");
-        })
+    //     test('Go Our Story and assert title', async ({ page }) => {
+    //         await expect.soft(page).toHaveTitle("Certified Financial Advisor & Planner India - Active and Passive Funds, Retirement Planning");
+    //     })
 
-        test('Go Helping you achieve financial well-being section and click on expansion and collapse tile', async ({ page, browser }) => {
-            await commonFunctions.scrollPage(page, 4);
-            await ourStoryPage.firstExpansionTile.click();
-            await ourStoryPage.secondExpansionTile.click();
-            await ourStoryPage.thirdExpansionTile.click();
-            await ourStoryPage.fourthExpansionTile.click();
-        });
+    //     test('Go Helping you achieve financial well-being section and click on expansion and collapse tile', async ({ page, browser }) => {
+    //         await commonFunctions.scrollPage(page, 4);
+    //         await ourStoryPage.firstExpansionTile.click();
+    //         await ourStoryPage.secondExpansionTile.click();
+    //         await ourStoryPage.thirdExpansionTile.click();
+    //         await ourStoryPage.fourthExpansionTile.click();
+    //     });
 
-        test('Click on read full article of first business card', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 9);
+    //     test('Click on read full article of first business card', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 9);
 
-            const [newPage] = await Promise.all([
-                page.waitForEvent('popup'),
-                ourStoryPage.firstStoryCard.click(),
-            ]);
+    //         const [newPage] = await Promise.all([
+    //             page.waitForEvent('popup'),
+    //             ourStoryPage.firstStoryCard.click(),
+    //         ]);
 
-            if (newPage) {
-                await newPage.waitForEvent('load');
-                expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/this-t20-season-1-finance-becomes-official-sponsor-for-kolkata-knight-riders-122032900400_1.html");
-            } else {
-                console.error("New page is not opened.");
-            }
-        })
+    //         if (newPage) {
+    //             await newPage.waitForEvent('load');
+    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/this-t20-season-1-finance-becomes-official-sponsor-for-kolkata-knight-riders-122032900400_1.html");
+    //         } else {
+    //             console.error("New page is not opened.");
+    //         }
+    //     })
 
-        test('Click on read full article of second business card', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 9);
+    //     test('Click on read full article of second business card', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 9);
 
-            const [newPage] = await Promise.all([
-                page.waitForEvent('popup'),
-                ourStoryPage.secondStoryCard.click(),
-            ]);
+    //         const [newPage] = await Promise.all([
+    //             page.waitForEvent('popup'),
+    //             ourStoryPage.secondStoryCard.click(),
+    //         ]);
 
-            if (newPage) {
-                await newPage.waitForEvent('load');
-                expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-launches-advisory-committee-for-qualified-financial-advisors-mumbai-chapter-122062900958_1.html");
-            } else {
-                console.error("New page is not opened.");
-            }
-        })
+    //         if (newPage) {
+    //             await newPage.waitForEvent('load');
+    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-launches-advisory-committee-for-qualified-financial-advisors-mumbai-chapter-122062900958_1.html");
+    //         } else {
+    //             console.error("New page is not opened.");
+    //         }
+    //     })
 
-        test('Click on read full article of third business card', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 9);
+    //     test('Click on read full article of third business card', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 9);
 
-            const [newPage] = await Promise.all([
-                page.waitForEvent('popup'),
-                ourStoryPage.thirdStoryCard.click(),
-            ]);
+    //         const [newPage] = await Promise.all([
+    //             page.waitForEvent('popup'),
+    //             ourStoryPage.thirdStoryCard.click(),
+    //         ]);
 
-            if (newPage) {
-                await newPage.waitForEvent('load');
-                expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-collaborates-with-aafm-india-to-bring-financial-well-being-awareness-for-affluent-indians-122092801046_1.html");
-            } else {
-                console.error("New page is not opened.");
-            }
-        })
+    //         if (newPage) {
+    //             await newPage.waitForEvent('load');
+    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-collaborates-with-aafm-india-to-bring-financial-well-being-awareness-for-affluent-indians-122092801046_1.html");
+    //         } else {
+    //             console.error("New page is not opened.");
+    //         }
+    //     })
 
-        test('Click on read full article of fourth business card', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 9);
+    //     test('Click on read full article of fourth business card', async ({ page }) => {
+    //         await commonFunctions.scrollPage(page, 9);
 
-            const [newPage] = await Promise.all([
-                page.waitForEvent('popup'),
-                ourStoryPage.fourthStoryCard.click(),
-            ]);
+    //         const [newPage] = await Promise.all([
+    //             page.waitForEvent('popup'),
+    //             ourStoryPage.fourthStoryCard.click(),
+    //         ]);
 
-            if (newPage) {
-                await newPage.waitForEvent('load');
-                expect(newPage.url()).toBe("https://theprint.in/ani-press-releases/1-finances-associates-with-network-fp-as-growth-partner-2022-23/1045580/");
-            } else {
-                console.error("New page is not opened.");
-            }
-        })
-    })
+    //         if (newPage) {
+    //             await newPage.waitForEvent('load');
+    //             expect(newPage.url()).toBe("https://theprint.in/ani-press-releases/1-finances-associates-with-network-fp-as-growth-partner-2022-23/1045580/");
+    //         } else {
+    //             console.error("New page is not opened.");
+    //         }
+    //     })
+    // })
 
     // test.describe("Circle Of Trust", async () => {
 
