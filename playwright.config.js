@@ -1,8 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 export default defineConfig({
 
   fullyParallel: false,
@@ -38,6 +35,19 @@ export default defineConfig({
         headless: true,
       },
     },
+    {
+      name: 'iPhone 11',
+      use: {
+        ...devices['iPhone 11'],
+        headless: true,
+      }
+    },
+    {
+      name: 'Google Pixel 4',
+      use: {
+        ...devices['Pixel 4'],
+        headless: true,
+      }
+    },
   ],
-
 });
