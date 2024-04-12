@@ -1,1 +1,0 @@
-[{"uid":"89c40f62492aeb17","name":"Click on download the App on Home Page","time":{"start":1712050831774,"stop":1712050835252,"duration":3478},"status":"passed","severity":"normal"},{"uid":"f1d46bf64b4a567c","name":"Go to home page and assert response","time":{"start":1712050827877,"stop":1712050831774,"duration":3897},"status":"passed","severity":"normal"}]
