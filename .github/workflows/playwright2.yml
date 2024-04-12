@@ -3,6 +3,8 @@ name: 1 Finance Engineering Checklist
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 8 * * *' # Run daily at 8:00 AM UTC
 
 jobs:
   test-and-report:
@@ -69,7 +71,7 @@ jobs:
             # Required mail subject:
             subject: Allure report
             # Required recipients' addresses:
-            to: runali.painaik@1finance.co.in,vinamra.mittal@1finance.co.in,harshit.maheshwari@1finance.co.in,nikhil.bhosle@1finance.co.in
+            to: runali.painaik@1finance.co.in, ashish.raykar@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in
             # Required sender full name (address can be skipped):
             from: Runali Painaik # <runali.painaik@1finance.co.in>
             # Optional plain body:
