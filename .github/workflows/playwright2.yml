@@ -10,10 +10,13 @@ jobs:
   test-and-report:
     runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: '20.x'
 
       - name: Install dependencies
         run: npm ci
@@ -26,15 +29,12 @@ jobs:
 
       - name: Get Allure History
         uses: actions/checkout@v4
-        if: always()
-        continue-on-error: true
         with: 
           ref: gh-pages
           path: gh-pages
 
       - name: Allure report action from marketplace
         uses: simple-elf/allure-report-action@v1.7
-        if: always()
         with: 
           allure_results: allure-results
           allure_report: allure-report
@@ -42,40 +42,27 @@ jobs:
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
           
   send-mail:
-        needs: test-and-report
-        name: Send mail
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-        - name: Send email
-          uses: dawidd6/action-send-mail@v3.12.0
-          with:
-            # Required mail server address if not connection_url:
-            server_address: smtp.gmail.com
-            # Server port, default 25:
-            server_port: 465
-            # Optional whether this connection use TLS (default is true if server_port is 465)
-            secure: true
-            # Optional (recommended) mail server username:
-            username: ${{secrets.MAIL_USERNAME}}
-            # Optional (recommended) mail server password:
-            password: ${{secrets.MAIL_PASSWORD}}
-            # Required mail subject:
-            subject: Allure report
-            # Required recipients' addresses:
-            to: runali.painaik@1finance.co.in, ashish.raykar@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in
-            # Required sender full name (address can be skipped):
-            from: Runali Painaik # <runali.painaik@1finance.co.in>
-            # Optional plain body:
-            body: Build job of ${{github.repository}} completed successfully!
-            # Optional HTML body read from file:
-            html_body: file://email.html
-              
+    needs: test-and-report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Allure report
+          to: runali.painaik@1finance.co.in, ashish.raykar@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in
+          from: Runali Painaik <runali.painaik@1finance.co.in>
+          body: Build job of ${{github.repository}} completed successfully!
+          html_body: file://email.html

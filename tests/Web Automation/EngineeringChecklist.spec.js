@@ -178,7 +178,7 @@ test.describe("QA Automation", () => {
 
     });
 
-    test.describe.only("Scoring and Ranking's Landing Page", async () => {
+    test.describe("Scoring and Ranking's Landing Page", async () => {
 
         let scoringAndRanking;
 
@@ -354,7 +354,7 @@ test.describe("QA Automation", () => {
         });
     });
 
-    test.describe.only("Magazine Page", async () => {
+    test.describe("Magazine Page", async () => {
 
         let magazinePage;
 
