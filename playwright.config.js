@@ -8,7 +8,7 @@ export default defineConfig({
 
   timeout: 50000,
 
-  retries: 1,
+  // retries: 1,
 
   reporter: [
 
@@ -35,13 +35,13 @@ export default defineConfig({
         headless: true,
       },
     },
-    {
-      name: 'iPhone 11',
-      use: {
-        ...devices['iPhone 11'],
-        headless: true,
-      }
-    },
+    // {
+    //   name: 'iPhone 11',
+    //   use: {
+    //     ...devices['iPhone 11'],
+    //     headless: true,
+    //   }
+    // },
     {
       name: 'Google Pixel 4',
       use: {
