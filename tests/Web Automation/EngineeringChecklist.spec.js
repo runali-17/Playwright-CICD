@@ -8,7 +8,7 @@ test.describe("QA Automation", () => {
 
     let commonFunctions;
 
-    test.describe('Homepage', () => {
+    test.describe.only('Homepage', () => {
 
         let homePage;
 
@@ -108,7 +108,7 @@ test.describe("QA Automation", () => {
         });
     })
 
-    test.describe("Calculator's Landing Page", async () => {
+    test.describe.only("Calculator's Landing Page", async () => {
 
         let calculatorPage;
 
@@ -178,7 +178,7 @@ test.describe("QA Automation", () => {
 
     });
 
-    test.describe("Scoring and Ranking's Landing Page", async () => {
+    test.describe.only("Scoring and Ranking's Landing Page", async () => {
 
         let scoringAndRanking;
 
@@ -368,7 +368,7 @@ test.describe("QA Automation", () => {
             await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
         });
 
-        test.only('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
+        test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
             await page.pause();
             await magazinePage.askAQFA.click();
             await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
