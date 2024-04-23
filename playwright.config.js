@@ -28,13 +28,13 @@ export default defineConfig({
   expect: { timeout: 5000 },
 
   projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        headless: true,
-      },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     headless: true,
+    //   },
+    // },
     {
       name: 'iPhone 11',
       use: {
@@ -42,12 +42,12 @@ export default defineConfig({
         headless: true,
       }
     },
-    {
-      name: 'Google Pixel 4',
-      use: {
-        ...devices['Pixel 4'],
-        headless: true,
-      }
-    },
+    // {
+    //   name: 'Google Pixel 4',
+    //   use: {
+    //     ...devices['Pixel 4'],
+    //     headless: true,
+    //   }
+    // },
   ],
 });

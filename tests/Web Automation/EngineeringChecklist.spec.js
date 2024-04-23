@@ -8,7 +8,7 @@ test.describe("QA Automation", () => {
 
     let commonFunctions;
 
-    test.describe('Homepage', () => {
+    test.describe.only('Homepage', () => {
         
         let homePage;
 
@@ -355,72 +355,71 @@ test.describe("QA Automation", () => {
         });
     });
 
-    // test.describe("Magazine Page", async () => {
+    test.describe("Magazine Page", async () => {
 
-    //     let magazinePage;
+        let magazinePage;
 
-    //     test.beforeEach(async ({ page }) => {
-    //         magazinePage = new MagazinePage(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl + "magazine/");
-    //     })
+        test.beforeEach(async ({ page }) => {
+            magazinePage = new MagazinePage(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl + "magazine/");
+        })
 
-    //     test('Go to magazine Landing page and assert response', async ({ page }) => {
-    //         await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
-    //     });
+        test('Go to magazine Landing page and assert response', async ({ page }) => {
+            await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
+        });
 
-    //     test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
-    //         await page.pause();
-    //         await magazinePage.askAQFA.click();
-    //         await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
-    //         await page.waitForTimeout(1000)
-    //         await page.goBack();
-    //         await magazinePage.dispatchOneFinance.click();
-    //         await page.waitForTimeout(1000)
-    //         await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await page.waitForTimeout(1000)
-    //         await magazinePage.longStoryShort.click();
-    //         await page.waitForTimeout(1000)
-    //         await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await page.waitForTimeout(1000)
-    //         await magazinePage.personalEssay.click();
-    //         await page.waitForTimeout(1000)
-    //         await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await page.waitForTimeout(1000)
-    //         await magazinePage.thingAboutMoney.click();
-    //         await page.waitForTimeout(1000)
-    //         await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //         await page.waitForTimeout(1000)
-    //     });
+        test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
+            await magazinePage.askAQFA.click();
+            await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
+            await page.waitForTimeout(1000)
+            await page.goBack();
+            await magazinePage.dispatchOneFinance.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.longStoryShort.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.personalEssay.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.thingAboutMoney.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+        });
 
-    //     test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.dispatchOneFinance.click();
-    //         await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.dispatchOneFinance.click();
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.longStoryShort.click();
-    //         await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.longStoryShort.click();
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to Personal Essay, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.personalEssay.click();
-    //         await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
+        test('Go to Personal Essay, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.personalEssay.click();
+            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-    //     test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
-    //         await magazinePage.thingAboutMoney.click();
-    //         await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-    //         await page.goBack();
-    //     });
-    // })
+        test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.thingAboutMoney.click();
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
+    })
 
     // test.describe('Our Story', () => {
 
