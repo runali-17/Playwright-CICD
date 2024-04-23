@@ -53,6 +53,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Set Date Variable
+        id: date
+        run: echo "::set-output name=date::$(date +'%B %d, %Y')"
       - name: Send email
         uses: dawidd6/action-send-mail@v3.12.0
         with:
@@ -61,7 +64,7 @@ jobs:
           secure: true
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
-          subject: "`r format(Sys.Date(), '%B %d, %Y')` Website Engineering Checklist Report"
+          subject: "Website Engineering Checklist Report - ${{ steps.date.outputs.date }}"
           to: runali.painaik@1finance.co.in, ashish.raykar@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in, nikhil.bhosle@1finance.co.in, rahul.mandal@1finance.co.in
           from: Runali Painaik <runali.painaik@1finance.co.in>
           body: Build job of ${{github.repository}} completed successfully!
