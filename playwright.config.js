@@ -35,13 +35,13 @@ export default defineConfig({
         headless: true,
       },
     },
-    {
-      name: 'iPhone 13',
-      use: {
-        ...devices['iPhone 13'],
-        headless: true,
-      }
-    },
+    // {
+    //   name: 'iPhone 13',
+    //   use: {
+    //     ...devices['iPhone 13'],
+    //     headless: true,
+    //   }
+    // },
     {
       name: 'Google Pixel 4',
       use: {
