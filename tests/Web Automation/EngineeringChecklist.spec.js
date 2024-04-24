@@ -8,8 +8,8 @@ test.describe("QA Automation", () => {
 
     let commonFunctions;
 
-    test.describe.only('Homepage', () => {
-        
+    test.describe('Homepage', () => {
+
         let homePage;
 
         test.beforeEach(async ({ page }) => {
@@ -198,11 +198,11 @@ test.describe("QA Automation", () => {
             await expect.soft(page).toHaveURL(baseUrl + "product-scoring/term-insurance");
         });
 
-        test('To click on Health Insurance and assert response', async ({ page }) => {
-            await scoringAndRanking.healthInsurance.click();
-            await page.waitForTimeout(2000)
-            await expect.soft(page).toHaveURL(baseUrl + "product-scoring/health-insurance");
-        });
+        // test.only('To click on Health Insurance and assert response', async ({ page }) => {
+        //     await scoringAndRanking.healthInsurance.click();
+        //     await page.waitForTimeout(2000)
+        //     await expect.soft(page).toHaveURL(baseUrl + "product-scoring/health-insurance");
+        // });
 
         test('To click on Credit Card and assert response', async ({ page }) => {
             await scoringAndRanking.creditCard.click();
@@ -234,7 +234,7 @@ test.describe("QA Automation", () => {
     })
 
     test.describe("MoneySign Guide Page", async () => {
-        
+
         let moneysignPage;
 
         test.beforeEach(async ({ page }) => {
@@ -369,32 +369,32 @@ test.describe("QA Automation", () => {
             await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
         });
 
-        test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
-            await magazinePage.askAQFA.click();
-            await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
-            await page.waitForTimeout(1000)
-            await page.goBack();
-            await magazinePage.dispatchOneFinance.click();
-            await page.waitForTimeout(1000)
-            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-            await page.goBack();
-            await page.waitForTimeout(1000)
-            await magazinePage.longStoryShort.click();
-            await page.waitForTimeout(1000)
-            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-            await page.goBack();
-            await page.waitForTimeout(1000)
-            await magazinePage.personalEssay.click();
-            await page.waitForTimeout(1000)
-            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-            await page.goBack();
-            await page.waitForTimeout(1000)
-            await magazinePage.thingAboutMoney.click();
-            await page.waitForTimeout(1000)
-            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-            await page.goBack();
-            await page.waitForTimeout(1000)
-        });
+        // test.only('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
+        //     await magazinePage.askAQFA.click();
+        //     await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
+        //     await page.waitForTimeout(1000)
+        //     await page.goBack();
+        //     await magazinePage.dispatchOneFinance.click();
+        //     await page.waitForTimeout(1000)
+        //     await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+        //     await page.goBack();
+        //     await page.waitForTimeout(1000)
+        //     await magazinePage.longStoryShort.click();
+        //     await page.waitForTimeout(1000)
+        //     await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+        //     await page.goBack();
+        //     await page.waitForTimeout(1000)
+        //     await magazinePage.personalEssay.click();
+        //     await page.waitForTimeout(1000)
+        //     await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+        //     await page.goBack();
+        //     await page.waitForTimeout(1000)
+        //     await magazinePage.thingAboutMoney.click();
+        //     await page.waitForTimeout(1000)
+        //     await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+        //     await page.goBack();
+        //     await page.waitForTimeout(1000)
+        // });
 
         test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
             await magazinePage.dispatchOneFinance.click();
@@ -421,124 +421,139 @@ test.describe("QA Automation", () => {
         });
     })
 
-    // test.describe('Our Story', () => {
+    test.describe('Our Story', () => {
 
-    //     let ourStoryPage;
+        let ourStoryPage;
 
-    //     test.beforeEach(async ({ page }) => {
-    //         ourStoryPage = new OurStoryPage(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl + "story");
-    //     })
+        test.beforeEach(async ({ page }) => {
+            ourStoryPage = new OurStoryPage(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl + "story");
+        })
 
-    //     test('Go Our Story and assert title', async ({ page }) => {
-    //         await expect.soft(page).toHaveTitle("Certified Financial Advisor & Planner India - Active and Passive Funds, Retirement Planning");
-    //     })
+        test('Go Our Story and assert title', async ({ page }) => {
+            await expect.soft(page).toHaveTitle("Certified Financial Advisor & Planner India - Active and Passive Funds, Retirement Planning");
+        })
 
-    //     test('Go Helping you achieve financial well-being section and click on expansion and collapse tile', async ({ page, browser }) => {
-    //         await commonFunctions.scrollPage(page, 4);
-    //         await ourStoryPage.firstExpansionTile.click();
-    //         await ourStoryPage.secondExpansionTile.click();
-    //         await ourStoryPage.thirdExpansionTile.click();
-    //         await ourStoryPage.fourthExpansionTile.click();
-    //     });
+        test('Go Helping you achieve financial well-being section and click on expansion and collapse tile', async ({ page, browser }) => {
+            // await commonFunctions.scrollPage(page, 4);
+            await ourStoryPage.firstExpansionTile.click();
+            await ourStoryPage.secondExpansionTile.click();
+            await ourStoryPage.thirdExpansionTile.click();
+            await ourStoryPage.fourthExpansionTile.click();
+        });
 
-    //     test('Click on read full article of first business card', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 9);
+        test('Click on read full article of first business card', async ({ page }) => {
+            // await commonFunctions.scrollPage(page, 9);
 
-    //         const [newPage] = await Promise.all([
-    //             page.waitForEvent('popup'),
-    //             ourStoryPage.firstStoryCard.click(),
-    //         ]);
+            await ourStoryPage.secondStoryCard.click(),
+                await page.waitForTimeout(2000)
 
-    //         if (newPage) {
-    //             await newPage.waitForEvent('load');
-    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/this-t20-season-1-finance-becomes-official-sponsor-for-kolkata-knight-riders-122032900400_1.html");
-    //         } else {
-    //             console.error("New page is not opened.");
-    //         }
-    //     })
+            // const [newPage] = await Promise.all([
+            //     page.waitForEvent('popup'),
+            //     ourStoryPage.firstStoryCard.click(),
+            // ]);
 
-    //     test('Click on read full article of second business card', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 9);
+            // if (newPage) {
+            //     await newPage.waitForEvent('load');
+            //     expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/this-t20-season-1-finance-becomes-official-sponsor-for-kolkata-knight-riders-122032900400_1.html");
+            // } else {
+            //     console.error("New page is not opened.");
+            // }
+        })
 
-    //         const [newPage] = await Promise.all([
-    //             page.waitForEvent('popup'),
-    //             ourStoryPage.secondStoryCard.click(),
-    //         ]);
+        test('Click on read full article of second business card', async ({ page }) => {
+            // await commonFunctions.scrollPage(page, 9);
 
-    //         if (newPage) {
-    //             await newPage.waitForEvent('load');
-    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-launches-advisory-committee-for-qualified-financial-advisors-mumbai-chapter-122062900958_1.html");
-    //         } else {
-    //             console.error("New page is not opened.");
-    //         }
-    //     })
+            await ourStoryPage.secondStoryCard.click(),
+                await page.waitForTimeout(2000)
 
-    //     test('Click on read full article of third business card', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 9);
+            // const [newPage] = await Promise.all([
+            //     page.waitForEvent('popup'),
+            //     ourStoryPage.secondStoryCard.click(),
+            // ]);
 
-    //         const [newPage] = await Promise.all([
-    //             page.waitForEvent('popup'),
-    //             ourStoryPage.thirdStoryCard.click(),
-    //         ]);
+            // if (newPage) {
+            //     await newPage.waitForEvent('load');
+            //     expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-launches-advisory-committee-for-qualified-financial-advisors-mumbai-chapter-122062900958_1.html");
+            // } else {
+            //     console.error("New page is not opened.");
+            // }
+        })
 
-    //         if (newPage) {
-    //             await newPage.waitForEvent('load');
-    //             expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-collaborates-with-aafm-india-to-bring-financial-well-being-awareness-for-affluent-indians-122092801046_1.html");
-    //         } else {
-    //             console.error("New page is not opened.");
-    //         }
-    //     })
+        test('Click on read full article of third business card', async ({ page }) => {
+            // await commonFunctions.scrollPage(page, 9);
 
-    //     test('Click on read full article of fourth business card', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 9);
+            await ourStoryPage.thirdStoryCard.click(),
+                await page.waitForTimeout(2000)
 
-    //         const [newPage] = await Promise.all([
-    //             page.waitForEvent('popup'),
-    //             ourStoryPage.fourthStoryCard.click(),
-    //         ]);
+            // const [newPage] = await Promise.all([
+            //     page.waitForEvent('popup'),
+            //     ourStoryPage.thirdStoryCard.click(),
+            // ]);
 
-    //         if (newPage) {
-    //             await newPage.waitForEvent('load');
-    //             expect(newPage.url()).toBe("https://theprint.in/ani-press-releases/1-finances-associates-with-network-fp-as-growth-partner-2022-23/1045580/");
-    //         } else {
-    //             console.error("New page is not opened.");
-    //         }
-    //     })
-    // })
+            // if (newPage) {
+            //     await newPage.waitForEvent('load');
+            //     expect(newPage.url()).toBe("https://www.business-standard.com/content/press-releases-ani/1-finance-collaborates-with-aafm-india-to-bring-financial-well-being-awareness-for-affluent-indians-122092801046_1.html");
+            // } else {
+            //     console.error("New page is not opened.");
+            // }
+        })
 
-    // test.describe("Circle Of Trust", async () => {
+        test('Click on read full article of fourth business card', async ({ page }) => {
+            // await commonFunctions.scrollPage(page, 9);
 
-    //     let circleOfTrust;
+            await ourStoryPage.fourthStoryCard.click(),
+                await page.waitForTimeout(2000)
 
-    //     test.beforeEach(async ({ page }) => {
-    //         circleOfTrust = new CircleOfTrust(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl + "circle-of-trust");
-    //     })
+            // const [newPage] = await Promise.all([
+            //     page.waitForEvent('popup'),
+            //     ourStoryPage.fourthStoryCard.click(),
+            // ]);
 
-    //     test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
-    //         await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
-    //     });
+            // if (newPage) {
+            //     await newPage.waitForEvent('load');
+            //     expect(newPage.url()).toBe("https://theprint.in/ani-press-releases/1-finances-associates-with-network-fp-as-growth-partner-2022-23/1045580/");
+            // } else {
+            //     console.error("New page is not opened.");
+            // }
+        })
+    })
 
-    //     test('Click on the Circle of Trusts Load More section', async ({ page }) => {
-    //         await commonFunctions.scrollPage(page, 3);
+    test.describe("Circle Of Trust", async () => {
 
-    //         const [newPage] = await Promise.all([
-    //             page.waitForEvent('popup'),
-    //             circleOfTrust.loadMore.click(),
-    //         ]);
+        let circleOfTrust;
 
-    //         if (newPage) {
-    //             await newPage.waitForEvent('load');
-    //             expect(newPage.url()).toBe("https://twitter.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
-    //         } else {
-    //             console.error("New page is not opened.");
-    //         }
-    //     });
+        test.beforeEach(async ({ page }) => {
+            circleOfTrust = new CircleOfTrust(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl + "circle-of-trust");
+            await page.waitForTimeout(1000)
+        })
 
-    // })
+        test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
+            await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
+        });
+
+        test('Click on the Circle of Trusts Load More section', async ({ page }) => {
+            // await commonFunctions.scrollPage(page, 3);
+            await circleOfTrust.loadMore.click(),
+            await page.waitForTimeout(1000);
+
+            // const [newPage] = await Promise.all([
+            //     page.waitForEvent('popup'),
+            //     circleOfTrust.loadMore.click(),
+            // ]);
+
+            // if (newPage) {
+            //     await newPage.waitForEvent('load');
+            //     expect(newPage.url()).toBe("https://twitter.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
+            // } else {
+            //     console.error("New page is not opened.");
+            // }
+        });
+
+    })
 
     // test.describe("Career Page", async () => {
 

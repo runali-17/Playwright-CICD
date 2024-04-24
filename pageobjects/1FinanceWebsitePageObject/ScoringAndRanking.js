@@ -7,7 +7,6 @@ export default class ScoringAndRanking {
     this.mutualFunds = page.locator("//a[@href='/product-scoring/mutual-funds?type=equity']");
     this.crypto = page.locator("//a[@href='/product-scoring/crypto']")
     this.titleContent = page.locator("//h1[normalize-space()='Scoring and Ranking']");
-
     this.firstTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][1]");
     this.secondTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][2]");
     this.thirdTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][3]");
