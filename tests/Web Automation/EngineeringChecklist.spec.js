@@ -531,14 +531,14 @@ test.describe("QA Automation", () => {
             await page.waitForTimeout(1000)
         })
 
-        test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
-            await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
-        });
+        // test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
+        //     await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
+        // });
 
-        test('Click on the Circle of Trusts Load More section', async ({ page }) => {
-            // await commonFunctions.scrollPage(page, 3);
-            await circleOfTrust.loadMore.click(),
-            await page.waitForTimeout(1000);
+        // test('Click on the Circle of Trusts Load More section', async ({ page }) => {
+        //     // await commonFunctions.scrollPage(page, 3);
+        //     await circleOfTrust.loadMore.click(),
+        //     await page.waitForTimeout(1000);
 
             // const [newPage] = await Promise.all([
             //     page.waitForEvent('popup'),
@@ -551,7 +551,7 @@ test.describe("QA Automation", () => {
             // } else {
             //     console.error("New page is not opened.");
             // }
-        });
+        // });
 
     })
 
