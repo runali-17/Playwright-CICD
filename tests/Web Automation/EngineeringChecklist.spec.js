@@ -369,44 +369,44 @@ test.describe("QA Automation", () => {
             await expect.soft(page).toHaveTitle("1 Finance Magazine- India's 1st Personal Finance Magazine Online");
         });
 
-        // test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
-        //     await magazinePage.askAQFA.click();
-        //     await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
-        //     await page.waitForTimeout(1000)
-        //     await page.goBack();
-        //     await magazinePage.dispatchOneFinance.click();
-        //     await page.waitForTimeout(1000)
-        //     await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        //     await page.waitForTimeout(1000)
-        //     await magazinePage.longStoryShort.click();
-        //     await page.waitForTimeout(1000)
-        //     await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        //     await page.waitForTimeout(1000)
-        //     await magazinePage.personalEssay.click();
-        //     await page.waitForTimeout(1000)
-        //     await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        //     await page.waitForTimeout(1000)
-        //     await magazinePage.thingAboutMoney.click();
-        //     await page.waitForTimeout(1000)
-        //     await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        //     await page.waitForTimeout(1000)
-        // });
+        test('Go to Magazine section, click on every title and go back to the landing page', async ({ page }) => {
+            await magazinePage.askAQFA.click();
+            await expect.soft(page).toHaveTitle("Ask a QFA Archives – 1 Finance Magazine");
+            await page.waitForTimeout(1000)
+            await page.goBack();
+            await magazinePage.dispatchOneFinance.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.longStoryShort.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.personalEssay.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("Personal Essays Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+            await magazinePage.thingAboutMoney.click();
+            await page.waitForTimeout(1000)
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+            await page.waitForTimeout(1000)
+        });
 
-        // test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
-        //     await magazinePage.dispatchOneFinance.click();
-        //     await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        // });
+        test('Go to Dispatch One Finance section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.dispatchOneFinance.click();
+            await expect.soft(page).toHaveTitle("Dispatch from 1 Finance Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
-        // test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
-        //     await magazinePage.longStoryShort.click();
-        //     await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        // });
+        test('Go to Long Story Short section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.longStoryShort.click();
+            await expect.soft(page).toHaveTitle("Long Story Short Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
 
         test('Go to Personal Essay, assert response and go back to the landing pagge', async ({ page }) => {
             await magazinePage.personalEssay.click();
@@ -414,11 +414,11 @@ test.describe("QA Automation", () => {
             await page.goBack();
         });
 
-        // test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
-        //     await magazinePage.thingAboutMoney.click();
-        //     await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
-        //     await page.goBack();
-        // });
+        test('Go to The thing about money section, assert response and go back to the landing pagge', async ({ page }) => {
+            await magazinePage.thingAboutMoney.click();
+            await expect.soft(page).toHaveTitle("The Thing About Money Archives – 1 Finance Magazine");
+            await page.goBack();
+        });
     })
 
     test.describe('Our Story', () => {
@@ -531,27 +531,27 @@ test.describe("QA Automation", () => {
             await page.waitForTimeout(1000)
         })
 
-        // test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
-        //     await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
-        // });
+        test('Go to Circle of Trust Landing page and assert response', async ({ page }) => {
+            await expect.soft(page).toHaveTitle("Circle of Trust - Featured Work | 1 Finance");
+        });
 
-        // test('Click on the Circle of Trusts Load More section', async ({ page }) => {
-            // await commonFunctions.scrollPage(page, 3);
-            // await circleOfTrust.loadMore.click(),
-            // await page.waitForTimeout(1000);
+        test('Click on the Circle of Trusts Load More section', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 3);
+            await circleOfTrust.loadMore.click(),
+            await page.waitForTimeout(1000);
 
-            // const [newPage] = await Promise.all([
-            //     page.waitForEvent('popup'),
-            //     circleOfTrust.loadMore.click(),
-            // ]);
+            const [newPage] = await Promise.all([
+                page.waitForEvent('popup'),
+                circleOfTrust.loadMore.click(),
+            ]);
 
-            // if (newPage) {
-            //     await newPage.waitForEvent('load');
-            //     expect(newPage.url()).toBe("https://twitter.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
-            // } else {
-            //     console.error("New page is not opened.");
-            // }
-        // });
+            if (newPage) {
+                await newPage.waitForEvent('load');
+                expect(newPage.url()).toBe("https://twitter.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
+            } else {
+                console.error("New page is not opened.");
+            }
+        });
     })
 
     // test.describe("Career Page", async () => {
@@ -745,53 +745,53 @@ test.describe("QA Automation", () => {
             await blogPage.closeButton.click();
         });
 
-        // test('Go to blog detail page and click on download the app', async ({ page }) => {
-        //     await blogPage.blog.click();
-        //     await blogPage.downloadTheApp2.click();
-        //     await blogPage.closeButton.click();
-        // })
+        test('Go to blog detail page and click on download the app', async ({ page }) => {
+            await blogPage.blog.click();
+            await blogPage.downloadTheApp2.click();
+            await blogPage.closeButton.click();
+        })
 
-        // test('Scroll down and click on Whatsapp Share Icon', async ({ page }) => {
-        //     await blogPage.blog.click();
-        //     await commonFunctions.scrollPage(page, 5);
-        //     await blogPage.whatsapp.click();
-        // })
+        test('Scroll down and click on Whatsapp Share Icon', async ({ page }) => {
+            await blogPage.blog.click();
+            await commonFunctions.scrollPage(page, 5);
+            await blogPage.whatsapp.click();
+        })
 
-        // test('Scroll down and click on LinkedIn Share Icon', async ({ page }) => {
-        //     await blogPage.blog.click();
-        //     await commonFunctions.scrollPage(page, 5);
-        //     await blogPage.linkedIn.click();
-        // })
+        test('Scroll down and click on LinkedIn Share Icon', async ({ page }) => {
+            await blogPage.blog.click();
+            await commonFunctions.scrollPage(page, 5);
+            await blogPage.linkedIn.click();
+        })
 
-        // test('Scroll down and click on Copy Link Icon', async ({ page }) => {
-        //     await blogPage.blog.click();
-        //     await commonFunctions.scrollPage(page, 5);
-        //     await blogPage.copy.click();
-        // })
+        test('Scroll down and click on Copy Link Icon', async ({ page }) => {
+            await blogPage.blog.click();
+            await commonFunctions.scrollPage(page, 5);
+            await blogPage.copy.click();
+        })
     })
 
-    // test.describe("Community", () => {
+    test.describe("Community", () => {
 
-    //     let communityPage;
+        let communityPage;
 
-    //     test.beforeEach(async ({ page }) => {
-    //         communityPage = new CommunityPage(page);
-    //         commonFunctions = new CommonFunctions(page);
-    //         await page.goto(baseUrl);
-    //         await page.mouse.wheel(0, 3000);
-    //     })
+        test.beforeEach(async ({ page }) => {
+            communityPage = new CommunityPage(page);
+            commonFunctions = new CommonFunctions(page);
+            await page.goto(baseUrl);
+            await page.mouse.wheel(0, 3000);
+        })
 
-        // test('Go to  the footer and click on Community page', async ({ page }) => {
-        //     await communityPage.community.click();
-        //     expect(page).toHaveURL("https://community.1finance.co.in/");
-        // });
+        test('Go to  the footer and click on Community page', async ({ page }) => {
+            await communityPage.community.click();
+            expect(page).toHaveURL("https://community.1finance.co.in/");
+        });
 
-        // test("Click on the One Fin Logo and check if the user is navigating back to the base URL", async ({ page }) => {
-        //     await communityPage.community.click();
-        //     await communityPage.oneFinLogo.click();
-        //     await expect.soft(page).toHaveURL(baseUrl);
-        // })
-    // })
+        test("Click on the One Fin Logo and check if the user is navigating back to the base URL", async ({ page }) => {
+            await communityPage.community.click();
+            await communityPage.oneFinLogo.click();
+            await expect.soft(page).toHaveURL(baseUrl);
+        })
+    })
 
     test.describe("Masterclass", () => {
 
@@ -805,40 +805,40 @@ test.describe("QA Automation", () => {
             await masterclassPage.masterclass.click();
         });
 
-        test('Go to Masterclass landing page and click on the previous card', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 2);
-            await masterclassPage.firstCard.click();
-            await page.goBack();
-        });
-
-        test('Check if the expansion and collapse tile for Masterclass landing page', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 4);
-            await masterclassPage.firstTile.click();
-            await masterclassPage.secondTile.click();
-            await masterclassPage.thirdTile.click();
-            await masterclassPage.fourthTile.click();
-            await masterclassPage.fifthTile.click();
-            await masterclassPage.sixthTile.click();
-            await masterclassPage.seventhTile.click();
-            await masterclassPage.eighthTile.click();
-            await masterclassPage.ninethTile.click();
-            await masterclassPage.tenthTile.click();
-            await masterclassPage.eleventhTile.click();
-        })
-
-        // test('Go to Masterclass detail page and check for the overall functionality ', async ({ page }) => {
+        // test('Go to Masterclass landing page and click on the previous card', async ({ page }) => {
         //     await commonFunctions.scrollPage(page, 2);
         //     await masterclassPage.firstCard.click();
-        //     await masterclassPage.watchFullMasterclass.click();
-        //     await masterclassPage.name.type("Runali");
-        //     await masterclassPage.name.press("Tab");
-        //     await masterclassPage.email.type("runalipainaik@gmail.com");
-        //     await masterclassPage.name.press("Tab");
-        //     await commonFunctions.scrollPage(page, 2);
-        //     await masterclassPage.positiveFeedback.click();
-        //     await masterclassPage.viewAllMasterclasses.click();
-        //     await expect.soft(page).toHaveURL(baseUrl + "masterclass?scroll=catchUp");
+        //     await page.goBack();
         // });
+
+        // test('Check if the expansion and collapse tile for Masterclass landing page', async ({ page }) => {
+        //     await commonFunctions.scrollPage(page, 4);
+        //     await masterclassPage.firstTile.click();
+        //     await masterclassPage.secondTile.click();
+        //     await masterclassPage.thirdTile.click();
+        //     await masterclassPage.fourthTile.click();
+        //     await masterclassPage.fifthTile.click();
+        //     await masterclassPage.sixthTile.click();
+        //     await masterclassPage.seventhTile.click();
+        //     await masterclassPage.eighthTile.click();
+        //     await masterclassPage.ninethTile.click();
+        //     await masterclassPage.tenthTile.click();
+        //     await masterclassPage.eleventhTile.click();
+        // })
+
+        test('Go to Masterclass detail page and check for the overall functionality ', async ({ page }) => {
+            await commonFunctions.scrollPage(page, 2);
+            await masterclassPage.firstCard.click();
+            await masterclassPage.watchFullMasterclass.click();
+            await masterclassPage.name.type("Runali");
+            await masterclassPage.name.press("Tab");
+            await masterclassPage.email.type("runalipainaik@gmail.com");
+            await masterclassPage.name.press("Tab");
+            await commonFunctions.scrollPage(page, 2);
+            await masterclassPage.positiveFeedback.click();
+            await masterclassPage.viewAllMasterclasses.click();
+            await expect.soft(page).toHaveURL(baseUrl + "masterclass?scroll=catchUp");
+        });
     })
 
     test.describe('Our Story', () => {
@@ -868,9 +868,9 @@ test.describe("QA Automation", () => {
             await supportPage.sixthTile.click();
         })
 
-        // test('Click on whatsapp icon present on the support page', async ({ page }) => {
-        //     await supportPage.whatsapp.click();
-        // })
+        test('Click on whatsapp icon present on the support page', async ({ page }) => {
+            await supportPage.whatsapp.click();
+        })
 
     })
 
@@ -1116,17 +1116,17 @@ test.describe("QA Automation", () => {
             await scoringAndRanking.secondPageTermIns.click();
         });
 
-        // test('Go to Term Insurance detail page and check for the overall functionality ', async ({ page }) => {
-        //     await page.goto(baseUrl + "product-scoring/term-insurance");
-        //     await scoringAndRanking.viewDetailTermIns.click();
-        //     await commonFunctions.scrollPage(page, 2);
-        //     await scoringAndRanking.positiveFeedbackTermIns.click();
-        //     await page.waitForTimeout(1000);
-        //     await commonFunctions.scrollPage(page, 1);
-        //     await scoringAndRanking.downloadButton.click();
-        //     await scoringAndRanking.closeButton.click();
-        //     await scoringAndRanking.viewMoreTermIns.click();
-        // });
+        test('Go to Term Insurance detail page and check for the overall functionality ', async ({ page }) => {
+            await page.goto(baseUrl + "product-scoring/term-insurance");
+            await scoringAndRanking.viewDetailTermIns.click();
+            await commonFunctions.scrollPage(page, 2);
+            await scoringAndRanking.positiveFeedbackTermIns.click();
+            await page.waitForTimeout(1000);
+            await commonFunctions.scrollPage(page, 1);
+            await scoringAndRanking.downloadButton.click();
+            await scoringAndRanking.closeButton.click();
+            await scoringAndRanking.viewMoreTermIns.click();
+        });
 
         test('Go to Health Insurance landing page and check for the overall functionality ', async ({ page }) => {
             await page.goto(baseUrl + "product-scoring/health-insurance?gender=male&age=36-40&family=self-&sum=10+Lacs");
@@ -1159,52 +1159,52 @@ test.describe("QA Automation", () => {
             await scoringAndRanking.viewMoreHealthIns.click();
         });
 
-        // test('Go to Credit Card landing page and check for the overall functionality ', async ({ page }) => {
-        //     const scoringAndRanking = new ScoringAndRanking(page);
-        //     await page.goto(baseUrl + "product-scoring/credit-card");
-        //     await commonFunctions.scrollPage(page, 7);
-        //     await scoringAndRanking.firstTileScoringRanking.click();
-        //     await scoringAndRanking.secondTileScoringRanking.click();
-        //     await scoringAndRanking.thirdTileScoringRanking.click();
-        //     await scoringAndRanking.fourthTileScoringRanking.click();
-        //     await scoringAndRanking.fifthTileScoringRanking.click();
-        //     await scoringAndRanking.sixthTileScoringRanking.click();
-        //     await scoringAndRanking.seventhTileScoringRanking.click();
-        //     await scoringAndRanking.eighthTileScoringRanking.click();
-        //     await scoringAndRanking.ninthTileScoringRanking.click();
-        //     await scoringAndRanking.tenthTileScoringRanking.click();
-        // });
+        test('Go to Credit Card landing page and check for the overall functionality ', async ({ page }) => {
+            const scoringAndRanking = new ScoringAndRanking(page);
+            await page.goto(baseUrl + "product-scoring/credit-card");
+            await commonFunctions.scrollPage(page, 7);
+            await scoringAndRanking.firstTileScoringRanking.click();
+            await scoringAndRanking.secondTileScoringRanking.click();
+            await scoringAndRanking.thirdTileScoringRanking.click();
+            await scoringAndRanking.fourthTileScoringRanking.click();
+            await scoringAndRanking.fifthTileScoringRanking.click();
+            await scoringAndRanking.sixthTileScoringRanking.click();
+            await scoringAndRanking.seventhTileScoringRanking.click();
+            await scoringAndRanking.eighthTileScoringRanking.click();
+            await scoringAndRanking.ninthTileScoringRanking.click();
+            await scoringAndRanking.tenthTileScoringRanking.click();
+        });
 
-        // test('Go to Credit Card detail page and check for the overall functionality ', async ({ page }) => {
-        //     const scoringAndRanking = new ScoringAndRanking(page);
-        //     await page.goto(baseUrl + "product-scoring/credit-card/hdfc-infinia-metal-card?score=84")
-        //     await commonFunctions.scrollPage(page, 3);
-        //     await scoringAndRanking.positiveFeedbackCreditCard.click();
-        //     await commonFunctions.scrollPage(page, 1);
-        //     await scoringAndRanking.downloadButtonCreditCard.click();
-        //     await scoringAndRanking.closeButton.click();
-        // });
+        test('Go to Credit Card detail page and check for the overall functionality ', async ({ page }) => {
+            const scoringAndRanking = new ScoringAndRanking(page);
+            await page.goto(baseUrl + "product-scoring/credit-card/hdfc-infinia-metal-card?score=84")
+            await commonFunctions.scrollPage(page, 3);
+            await scoringAndRanking.positiveFeedbackCreditCard.click();
+            await commonFunctions.scrollPage(page, 1);
+            await scoringAndRanking.downloadButtonCreditCard.click();
+            await scoringAndRanking.closeButton.click();
+        });
 
-        // test('Go to Mutual funds landing page and check for the overall functionality ', async ({ page }) => {
-        //     const scoringAndRanking = new ScoringAndRanking(page);
-        //     await page.goto(baseUrl + "product-scoring/mutual-funds?type=equity");
-        //     await commonFunctions.scrollPage(page, 3);
-        //     await scoringAndRanking.firstTileScoringRanking.click();
-        //     await scoringAndRanking.secondTileScoringRanking.click();
-        //     await scoringAndRanking.thirdTileScoringRanking.click();
-        //     await scoringAndRanking.fourthTileScoringRanking.click();
-        //     await scoringAndRanking.fifthTileScoringRanking.click();
-        // });
+        test('Go to Mutual funds landing page and check for the overall functionality ', async ({ page }) => {
+            const scoringAndRanking = new ScoringAndRanking(page);
+            await page.goto(baseUrl + "product-scoring/mutual-funds?type=equity");
+            await commonFunctions.scrollPage(page, 3);
+            await scoringAndRanking.firstTileScoringRanking.click();
+            await scoringAndRanking.secondTileScoringRanking.click();
+            await scoringAndRanking.thirdTileScoringRanking.click();
+            await scoringAndRanking.fourthTileScoringRanking.click();
+            await scoringAndRanking.fifthTileScoringRanking.click();
+        });
 
-        // test('Go to Mutual Funds detail page and check for the overall functionality ', async ({ page }) => {
-        //     const scoringAndRanking = new ScoringAndRanking(page);
-        //     await page.goto(baseUrl + "product-scoring/mutual-funds/parag-parikh-flexi-cap-fundg-direct-plan?type=equity")
-        //     await commonFunctions.scrollPage(page, 1);
-        //     await scoringAndRanking.positiveFeedbackMutualFunds.click();
-        //     await commonFunctions.scrollPage(page, 1);
-        //     await scoringAndRanking.downloadButtonCreditCard.click();
-        //     await scoringAndRanking.closeButton.click();
-        // });
+        test('Go to Mutual Funds detail page and check for the overall functionality ', async ({ page }) => {
+            const scoringAndRanking = new ScoringAndRanking(page);
+            await page.goto(baseUrl + "product-scoring/mutual-funds/parag-parikh-flexi-cap-fundg-direct-plan?type=equity")
+            await commonFunctions.scrollPage(page, 1);
+            await scoringAndRanking.positiveFeedbackMutualFunds.click();
+            await commonFunctions.scrollPage(page, 1);
+            await scoringAndRanking.downloadButtonCreditCard.click();
+            await scoringAndRanking.closeButton.click();
+        });
 
         test('Go to Crypto landing page and check for the overall functionality ', async ({ page }) => {
             const scoringAndRanking = new ScoringAndRanking(page);
