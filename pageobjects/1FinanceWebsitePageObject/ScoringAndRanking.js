@@ -13,7 +13,6 @@ export default class ScoringAndRanking {
     this.fourthTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][4]");
     this.fifthTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][5]");
     this.sixthTile = page.locator("//div[contains(@class, 'Accordion_accordion__gJ319')][6]");
-
     this.globalSearchOption = page.locator("//div[@class='search_placeholder-container__gHXbf']");
     this.firstTileScoringRanking = page.locator("//div[contains(@class, 'mf-accordion_accordion__rIrR8')][1]");
     this.secondTileScoringRanking = page.locator("//div[contains(@class, 'mf-accordion_accordion__rIrR8')][2]");
