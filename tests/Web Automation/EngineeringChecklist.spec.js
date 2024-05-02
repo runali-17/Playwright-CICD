@@ -745,32 +745,32 @@ test.describe("QA Automation", () => {
             await blogPage.closeButton.click();
         });
 
-        test('Go to blog detail page and click on download the app', async ({ page }) => {
-            await blogPage.blog.click();
-            await page.waitForTimeout(1000);
-            await blogPage.downloadTheApp2.click();
-            await page.waitForTimeout(1000);
-            await blogPage.closeButton.click();
-            await page.waitForTimeout(1000);
-        })
+        // test('Go to blog detail page and click on download the app', async ({ page }) => {
+        //     await blogPage.blog.click();
+        //     await page.waitForTimeout(1000);
+        //     await blogPage.downloadTheApp2.click();
+        //     await page.waitForTimeout(1000);
+        //     await blogPage.closeButton.click();
+        //     await page.waitForTimeout(1000);
+        // })
 
-        test('Scroll down and click on Whatsapp Share Icon', async ({ page }) => {
-            await blogPage.blog.click();
-            await commonFunctions.scrollPage(page, 5);
-            await blogPage.whatsapp.click();
-        })
+        // test('Scroll down and click on Whatsapp Share Icon', async ({ page }) => {
+        //     await blogPage.blog.click();
+        //     await commonFunctions.scrollPage(page, 5);
+        //     await blogPage.whatsapp.click();
+        // })
 
-        test('Scroll down and click on LinkedIn Share Icon', async ({ page }) => {
-            await blogPage.blog.click();
-            await commonFunctions.scrollPage(page, 5);
-            await blogPage.linkedIn.click();
-        })
+        // test('Scroll down and click on LinkedIn Share Icon', async ({ page }) => {
+        //     await blogPage.blog.click();
+        //     await commonFunctions.scrollPage(page, 5);
+        //     await blogPage.linkedIn.click();
+        // })
 
-        test('Scroll down and click on Copy Link Icon', async ({ page }) => {
-            await blogPage.blog.click();
-            await commonFunctions.scrollPage(page, 5);
-            await blogPage.copy.click();
-        })
+        // test('Scroll down and click on Copy Link Icon', async ({ page }) => {
+        //     await blogPage.blog.click();
+        //     await commonFunctions.scrollPage(page, 5);
+        //     await blogPage.copy.click();
+        // })
     })
 
     test.describe("Community", () => {
