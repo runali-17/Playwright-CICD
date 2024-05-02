@@ -42,12 +42,12 @@ export default defineConfig({
     //     headless: true,
     //   }
     // },
-    {
-      name: 'Google Pixel 4',
-      use: {
-        ...devices['Pixel 4'],
-        headless: true,
-      }
-    },
+    // {
+    //   name: 'Google Pixel 4',
+    //   use: {
+    //     ...devices['Pixel 4'],
+    //     headless: true,
+    //   }
+    // },
   ],
 });
