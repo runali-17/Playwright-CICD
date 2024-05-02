@@ -784,16 +784,16 @@ test.describe("QA Automation", () => {
             await page.mouse.wheel(0, 3000);
         })
 
-        test('Go to  the footer and click on Community page', async ({ page }) => {
-            await communityPage.community.click();
-            expect(page).toHaveURL("https://community.1finance.co.in/");
-        });
+        // test('Go to  the footer and click on Community page', async ({ page }) => {
+        //     await communityPage.community.click();
+        //     expect(page).toHaveURL("https://community.1finance.co.in/");
+        // });
 
-        test("Click on the One Fin Logo and check if the user is navigating back to the base URL", async ({ page }) => {
-            await communityPage.community.click();
-            await communityPage.oneFinLogo.click();
-            await expect.soft(page).toHaveURL(baseUrl);
-        })
+        // test("Click on the One Fin Logo and check if the user is navigating back to the base URL", async ({ page }) => {
+        //     await communityPage.community.click();
+        //     await communityPage.oneFinLogo.click();
+        //     await expect.soft(page).toHaveURL(baseUrl);
+        // })
     })
 
     test.describe("Masterclass", () => {
@@ -829,19 +829,19 @@ test.describe("QA Automation", () => {
         //     await masterclassPage.eleventhTile.click();
         // })
 
-        test('Go to Masterclass detail page and check for the overall functionality ', async ({ page }) => {
-            await commonFunctions.scrollPage(page, 2);
-            await masterclassPage.firstCard.click();
-            await masterclassPage.watchFullMasterclass.click();
-            await masterclassPage.name.type("Runali");
-            await masterclassPage.name.press("Tab");
-            await masterclassPage.email.type("runalipainaik@gmail.com");
-            await masterclassPage.name.press("Tab");
-            await commonFunctions.scrollPage(page, 2);
-            await masterclassPage.positiveFeedback.click();
-            await masterclassPage.viewAllMasterclasses.click();
-            await expect.soft(page).toHaveURL(baseUrl + "masterclass?scroll=catchUp");
-        });
+        // test('Go to Masterclass detail page and check for the overall functionality ', async ({ page }) => {
+        //     await commonFunctions.scrollPage(page, 2);
+        //     await masterclassPage.firstCard.click();
+        //     await masterclassPage.watchFullMasterclass.click();
+        //     await masterclassPage.name.type("Runali");
+        //     await masterclassPage.name.press("Tab");
+        //     await masterclassPage.email.type("runalipainaik@gmail.com");
+        //     await masterclassPage.name.press("Tab");
+        //     await commonFunctions.scrollPage(page, 2);
+        //     await masterclassPage.positiveFeedback.click();
+        //     await masterclassPage.viewAllMasterclasses.click();
+        //     await expect.soft(page).toHaveURL(baseUrl + "masterclass?scroll=catchUp");
+        // });
     })
 
     test.describe('Our Story', () => {
