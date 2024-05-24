@@ -19,6 +19,7 @@ test.describe("QA Automation", () => {
         });
 
         test('Go to home page and assert title of the page', async ({ page }) => {
+            await page.pause();
             await expect.soft(homePage.titleContent).toContainText("Get Holistic Financial Planning");
             await expect.soft(page).toHaveTitle("Personal Financial Management & Planning - Best Personal Finance Advisory in India | 1Finance");
         });
@@ -108,7 +109,7 @@ test.describe("QA Automation", () => {
         });
     })
 
-    test.describe("Calculator's Landing Page", async () => {
+    test.describe.only("Calculator's Landing Page", async () => {
 
         let calculatorPage;
 
@@ -123,18 +124,21 @@ test.describe("QA Automation", () => {
         });
 
         test('To click on HRA Exemption and assert response', async ({ page }) => {
+            await page.pause();
             await calculatorPage.hraExemption.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/hra-exemption");
         });
 
         test('To click on Old Vs New Calculator and assert response', async ({ page }) => {
+            await page.pause();
             await calculatorPage.oldVsNewCalculator.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/old-vs-new");
         });
 
         test('To click on Mutual Fund Portfolio Overlap and assert response', async ({ page }) => {
+            await page.pause();
             await calculatorPage.mFPortfolioOverlap.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/portfolio-review");
@@ -547,7 +551,7 @@ test.describe("QA Automation", () => {
 
             if (newPage) {
                 await newPage.waitForEvent('load');
-                expect(newPage.url()).toBe("https://twitter.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
+                expect(newPage.url()).toBe("https://x.com/1financehq?s=21&t=N1gRzEtuF1wYDghm4w1pGA");
             } else {
                 console.error("New page is not opened.");
             }

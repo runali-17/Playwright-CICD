@@ -65,7 +65,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: "Website Engineering Checklist Report - ${{ steps.date.outputs.date }}"
-          to: runali.painaik@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in, nikhil.bhosle@1finance.co.in, rahul.mandal@1finance.co.in, harshit.maheshwari@1finance.co.in, nikhil.bhosle@1finance.co.in, amol.bhanushali@1finance.co.in. vinamra.mittal@1finance.co.in
+          to: runali.painaik@1finance.co.in, dakshayani.kasture@1finance.co.in, neshma.chorghe@1finance.co.in, nikhil.bhosle@1finance.co.in, rahul.mandal@1finance.co.in, harshit.maheshwari@1finance.co.in, nikhil.bhosle@1finance.co.in, amol.bhanushali@1finance.co.in, vinamra.mittal@1finance.co.in
           from: Runali Painaik <runali.painaik@1finance.co.in>
           body: Build job of ${{github.repository}} completed successfully!
           html_body: file://email.html
