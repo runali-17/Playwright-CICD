@@ -109,7 +109,7 @@ test.describe("QA Automation", () => {
         });
     })
 
-    test.describe.only("Calculator's Landing Page", async () => {
+    test.describe("Calculator's Landing Page", async () => {
 
         let calculatorPage;
 
@@ -124,21 +124,18 @@ test.describe("QA Automation", () => {
         });
 
         test('To click on HRA Exemption and assert response', async ({ page }) => {
-            await page.pause();
             await calculatorPage.hraExemption.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/hra-exemption");
         });
 
         test('To click on Old Vs New Calculator and assert response', async ({ page }) => {
-            await page.pause();
             await calculatorPage.oldVsNewCalculator.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/old-vs-new");
         });
 
         test('To click on Mutual Fund Portfolio Overlap and assert response', async ({ page }) => {
-            await page.pause();
             await calculatorPage.mFPortfolioOverlap.click();
             await page.waitForTimeout(2000);
             await expect.soft(page).toHaveURL(baseUrl + "calculator/portfolio-review");
