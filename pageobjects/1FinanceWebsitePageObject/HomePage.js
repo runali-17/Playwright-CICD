@@ -1,29 +1,19 @@
 export default class HomePage {
     constructor(page){
         this.page = page;
-        this.titleContent = page.locator("//h1[normalize-space()='Get Holistic Financial Planning']");
-        this.downloadTheAppContent = page.locator("//h3[normalize-space()='Download 1 Finance']");
-        this.cashFlowContent = page.locator("//h2[normalize-space()='Cashflow Planning']");
-        this.insuranceContent = page.locator("//h2[normalize-space()='Insurance Planning']");
-        this.liabilityContent = page.locator("//h2[normalize-space()='Liability Planning']");
-        this.investmentContent = page.locator("//h2[normalize-space()='Investment Planning']");
-        this.taxContent = page.locator("//h2[normalize-space()='Tax Planning']");
-        this.willContent = page.locator("//h2[normalize-space()='Will & Estate Planning']");
-        this.downloadAppButton = page.locator("div[class='banner_banner-container__Bb4vo'] a[class='download_download-btn__ebsp4']");
-        this.closeDownloadScreen = page.locator("//button[contains(@id, 'DownloadAppModal_close')]");
-        this.cashFlowPlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[1]");
-        this.liabilityPlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[2]");
-        this.taxPlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[3]");
-        this.insurancePlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[4]");
-        this.investmentPlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[5]");
-        this.willPlanning = page.locator("//div[contains(@class, 'Financeapproach_approach-container-data')]//div[6]");
-        this.downloadAppButtonTwo = page.locator("div[class='undefined'] a[class='download_download-btn__ebsp4']");
-        this.downloadAppButtonThree = page.locator("div[class='Wellnessplan_wellnessplan-downloadbtn-row__dWXxd'] a[class='download_download-btn__ebsp4']")
-        this.faqFirstTile =page.locator("//body/div[@id='__next']/div[contains(@class, 'homePagev4_main-container')]/section/div[contains(@class, 'homePagev4_accordion-data')]/div[1]/div[1]");
-        this.faqSecondTile = page.locator("//body/div[@id='__next']/div[contains(@class, 'homePagev4_main-container')]/section/div[contains(@class, 'homePagev4_accordion-data')]/div[2]/div[1]");
-        this.faqThirdTile = page.locator("//body/div[@id='__next']/div[contains(@class, 'homePagev4_main-container')]/section/div[contains(@class, 'homePagev4_accordion-data')]/div[3]/div[1]");
-        this.faqFourthTile = page.locator("//body/div[@id='__next']/div[contains(@class, 'homePagev4_main-container')]/section/div[contains(@class, 'homePagev4_accordion-data')]/div[4]/div[1]");
-        this.faqFifthTile = page.locator("//body/div[@id='__next']/div[contains(@class, 'homePagev4_main-container')]/section/div[contains(@class, 'homePagev4_accordion-data')]/div[5]/div[1]");
+        this.titleContent = page.locator("//div[@class='HomeSection_Container_Hero_One_Part_title_one__Vqav3']");
+        this.bookAnAppointment = page.locator("//button[@class='HomeSection_CTAButton__yzbyv']");
+        this.bookAnAppointment2 = page.locator("(//button[contains(@class,'ButtonCTA_BTNContainer__kyG9m')])[2]");
+        this.bookAnAppointment3 = page.locator("//button[@class='DownloadCTA_CTAButton__ldBRh']");
+        this.faqFirstTile =page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[1]");
+        this.faqSecondTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[2]");
+        this.faqThirdTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[3]");
+        this.faqFourthTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[4]");
+        this.faqFifthTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[5]");
+        this.faqSixthTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[6]");
+        this.faqSeventhTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[7]");
+        this.faqEighthTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[8]");
+        this.faqNinthTile = page.locator("(//div[@class='FAQSection_AccordionContent__c40Z9'])[9]");
     }
 
     async goToHomePage(page, baseUrl) {

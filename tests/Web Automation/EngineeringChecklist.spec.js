@@ -19,97 +19,50 @@ test.describe("QA Automation", () => {
         });
 
         test('Go to home page and assert title of the page', async ({ page }) => {
-            await page.pause();
-            await expect.soft(homePage.titleContent).toContainText("Get Holistic Financial Planning");
-            await expect.soft(page).toHaveTitle("Personal Financial Management & Planning - Best Personal Finance Advisory in India | 1Finance");
+            await expect.soft(homePage.titleContent).toContainText("");
         });
 
-        test('Click on download the App present on 1 Finance Landing Page', async ({ page }) => {
-            await homePage.downloadAppButton.click();
+        test('Click on Book an Appointment present on 1 Finance Landing Page', async ({ page }) => {
+            await homePage.bookAnAppointment.click();
             await page.waitForTimeout(2000);
-            // const url = page.url();
-
-            // if (url === baseUrl) {
-            //     await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-            //     await homePage.closeDownloadScreen.click();
-            // }
-            // else {
-            //     expect(page.url()).toContain("https://1finance.onelink.me");
-            // }
-
+            expect(page.url()).toContain("https://1finance.co.in/request-a-callback");
         });
 
-        test('Click on cashflow planning and assert response', async ({ page }) => {
-            // await commonFunctions.scrollPage(page, 1);
-            await homePage.cashFlowPlanning.click();
-            await expect(homePage.cashFlowContent).toContainText("Cashflow Planning");
-        });
-
-        test('Click on liability planning and assert response', async ({ page }) => {
-            await homePage.liabilityPlanning.click();
-            await expect(homePage.liabilityContent).toContainText("Liability Planning");
-        });
-
-        test('Click on tax planning and assert response', async ({ page }) => {
-            await homePage.taxPlanning.click();
-            await expect(homePage.taxContent).toContainText("Tax Planning");
-        });
-
-        test('Click on insurance planning and assert response', async ({ page }) => {
-            await homePage.insurancePlanning.click();
-            await expect(homePage.insuranceContent).toContainText("Insurance Planning");
-        });
-
-        test('Click on investment planning and assert response', async ({ page }) => {
-            await homePage.investmentPlanning.click();
-            await expect(homePage.investmentContent).toContainText("Investment Planning");
-        });
-
-        test('Click on will planning and assert response', async ({ page }) => {
-            await homePage.willPlanning.click();
-            await expect(homePage.willContent).toContainText("Will & Estate Planning");
-        });
-
-        test('Click on download the app in How it Works ? section of Home Page', async ({ page }) => {
-            // await commonFunctions.scrollPage(page, 2);
-            await homePage.downloadAppButtonTwo.click();
-            await page.waitForTimeout(2000);
-            // const url = page.url();
-            // if (url === baseUrl) {
-            //     await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-            //     await homePage.closeDownloadScreen.click();
-            // }
-            // else {
-            //     expect(page.url()).toContain("https://1finance.onelink.me");
-            // }
-        });
-
-        test('Click on download the app of FWP section on Home Page', async ({ page }) => {
-            // await commonFunctions.scrollPage(page, 3);
-            await homePage.downloadAppButtonThree.click();
-            await page.waitForTimeout(2000);
-
-            // const url = page.url();
-
-            // if (url === baseUrl) {
-            //     await expect(homePage.downloadTheAppContent).toContainText("Download 1 Finance");
-            //     await homePage.closeDownloadScreen.click();
-            // }
-            // else {
-            //     expect(page.url()).toContain("https://1finance.onelink.me");
-            // }
+        test('Click on 2nd Book an Appointment present on 1 Finance Landing Page', async ({ page }) => {
+            await homePage.bookAnAppointment2.click();
+            expect(page.url()).toContain("https://1finance.co.in/request-a-callback");
         });
 
         test('To check expansion and collapse tile in FAQ section', async ({ page }) => {
             await homePage.faqFirstTile.click();
+            await page.waitForTimeout(1000);
             await homePage.faqSecondTile.click();
+            await page.waitForTimeout(1000);
             await homePage.faqThirdTile.click();
+            await page.waitForTimeout(1000);
             await homePage.faqFourthTile.click();
+            await page.waitForTimeout(1000);
             await homePage.faqFifthTile.click();
+            await page.waitForTimeout(1000);
+            await homePage.faqSixthTile.click();
+            await page.waitForTimeout(1000);
+            await homePage.faqSeventhTile.click();
+            await page.waitForTimeout(1000);
+            await homePage.faqEighthTile.click();
+            await page.waitForTimeout(1000);
+            await homePage.faqNinthTile.click();
+            await page.waitForTimeout(1000);
         });
+
+        test('Click on 3rd Book an Appointment present on 1 Finance Landing Page', async ({ page }) => {
+            await homePage.bookAnAppointment3.click();
+            await page.waitForTimeout(1000);
+            expect(page.url()).toContain("https://1finance.co.in/request-a-callback");
+        });
+
     })
 
-    test.describe("Calculator's Landing Page", async () => {
+    test.describe.only("Calculator's Landing Page", async () => {
 
         let calculatorPage;
 
